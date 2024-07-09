@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
@@ -51,7 +53,7 @@
   <div class="overlay"></div>
 
   <main>
-    <section>
+    <section class="main-content">
       {{ content }}
     </section>
   </main>
@@ -62,6 +64,15 @@
     //   var menu = document.getElementById('nav-menu');
     //   menu.classList.toggle('show');
     // }
+
+    window.onscroll = function () {
+      var navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
   </script>
 </body>
 

@@ -1,10 +1,15 @@
 <header>
   <div class="banner">
-    <nav>
+    <nav id="navbar">
       <div class="nav-left">
         <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Volia Tech Logo" class="logo">
         <span class="company-name">Volia Tech.</span>
       </div>
+
+      <!-- 
+      Toggle
+      -->
+      <div class="menu-toggle">☰</div>
 
       <ul class="nav-right" id="nav-menu">
         {% for item in site.data.navigation %}
@@ -16,11 +21,10 @@
         {% endfor %}
       </ul>
     </nav>
-    <div class="menu-toggle">☰</div>
-    <!-- 
-Subheader      
--->
 
+    <!-- 
+    Subheader      
+    -->
     <div class="subheader">
       <h2>Stay ahead of the curve!</h2>
       <p>Leverage AI to boost your company efficiency and skyrocket revenue!</p>
