@@ -1,0 +1,31 @@
+
+<header>
+    <div class="banner">
+      <nav>
+        <div class="nav-left">
+            <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Volia Tech Logo" class="logo">
+            <span class="company-name">Volia Tech.</span>
+          </div>
+
+        <ul class="nav-right">
+          {% for item in site.data.navigation %}
+          <li>
+            <a href="{{ item.link }}" 
+              {% if page.url == item.link %}class="current"{% endif %}>
+            {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+<!-- 
+Subheader      
+-->
+      <div class="subheader">
+        <h2>Stay ahead of the curve!</h2>
+        <p>Leverage AI to boost your company efficiency and skyrocket revenue!</p>
+      </div>
+
+    </div>
+</header>

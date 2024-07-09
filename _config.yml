@@ -1,0 +1,8 @@
+title: GIGs
+email: cs@voliatech.com
+description: Stay ahead of the curve!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://apps.voliatech.com" # the base hostname & protocol for your site
+
+exclude: ["myblog"]
+# theme: minima

@@ -1,0 +1,8 @@
+- name: Home
+  link: /
+- name: Our Aim
+  link: /our-aim/
+- name: Our Products
+  link: /our-products/
+- name: Contact Us
+  link: /contact-us
