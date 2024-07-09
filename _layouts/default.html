@@ -1,20 +1,67 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-  </head>
-  <body>
 
-      {% include header.html %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
-    {{ content }}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuIcon = document.querySelector('.menu-toggle');
+      const navigation = document.querySelector('.nav-right');
+      const overlay = document.querySelector('.overlay');
 
-    <footer>
-      <p>&copy; {{ site.time | date: '%Y' }} Volia Tech. All rights reserved.</p>
-    </footer>
-  </body>
+      menuIcon.addEventListener('click', function () {
+        // console.log("menuIcon click ", navigation.classList)
+        navigation.classList.toggle('open');
+        overlay.style.display = navigation.classList.contains('open') ? 'block' : 'none';
+      });
+
+      overlay.addEventListener('click', function () {
+        navigation.classList.remove('open');
+        overlay.style.display = 'none';
+      });
+
+      document.addEventListener('click', function (event) {
+        const isClickInsideMenu = navigation.contains(event.target);
+
+        // console.log("document click : isClickInsideMenu", isClickInsideMenu)
+
+        const isClickInsideMenuIcon = menuIcon.contains(event.target);
+
+        // console.log("document click : isClickInsideMenuIcon", isClickInsideMenuIcon)
+
+        if (!isClickInsideMenu && !isClickInsideMenuIcon) {
+          navigation.classList.remove('open');
+          overlay.style.display = 'none';
+        }
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  <div class="overlay"></div>
+
+  {{ content }}
+
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Volia Tech. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // function toggleMenu() {
+    //   var menu = document.getElementById('nav-menu');
+    //   menu.classList.toggle('show');
+    // }
+  </script>
+</body>
+
 </html>
