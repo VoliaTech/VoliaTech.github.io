@@ -7,3 +7,4 @@ url: "https://apps.voliatech.com" # the base hostname & protocol for your site
 
 exclude: ["myblog"]
 # theme: minima
+include: [".htaccess", "_pages"]

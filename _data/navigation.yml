@@ -1,8 +1,8 @@
 - name: Home
   link: /
-- name: Our Aim
-  link: /our-aim/
-- name: Our Products
+- name: Our aims
+  link: /our-aims/
+- name: Our products
   link: /our-products/
-- name: Contact Us
-  link: /contact-us
+- name: Contact us
+  link: /contact-us/

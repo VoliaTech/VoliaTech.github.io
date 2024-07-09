@@ -1,8 +1,10 @@
 $sub-header-font-size: 32px !default;
 $sub-header-font-size-small: 24px !default;
-$base-font-weight: 400 !default;
+$base-font-weight: 300 !default;
 $page-padding-horizontal: 48px !default;
 $page-padding-horizontal-small: 32px !default;
+$page-font-size: 24px !default;
+$page-font-size-small: 20px !default;
 
 .current {
   // color: green;
@@ -155,8 +157,19 @@ main h1 {
 
 main p {
   line-height: 1.6;
-  font-weight: 400;
-  font-size: 24px;
+  font-weight: $base-font-weight;
+  font-size: $page-font-size;
+}
+
+.product-item p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: 1.25;
+  font-size: $page-font-size-small;
+}
+
+.product-item h3 {
+  margin-bottom: 8px;
 }
 
 footer {
