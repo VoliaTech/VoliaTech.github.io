@@ -50,12 +50,13 @@
 
   <div class="overlay"></div>
 
-  {{ content }}
+  <main>
+    <section>
+      {{ content }}
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} Volia Tech. All rights reserved.</p>
-  </footer>
-
+  {% include footer.html %}
   <script>
     // function toggleMenu() {
     //   var menu = document.getElementById('nav-menu');

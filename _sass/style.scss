@@ -11,9 +11,13 @@ $page-padding-horizontal-small: 32px !default;
 
 body {
   font-family: 'Lato', sans-serif;
-  line-height: 1.6;
+  // line-height: 1.6;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensures the body takes full height of the window */
 }
 
 .banner {
@@ -76,6 +80,7 @@ nav {
   margin: 0;
   display: flex;
   margin-right: 20px;
+  font-weight: lighter;
 }
 
 .nav-right li {
@@ -125,17 +130,60 @@ nav {
 // ----------------- end of header -------------- //
 
 main {
-  padding: 20px;
+  flex: 1;
+  padding: $page-padding-horizontal;
+  // margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  // align-items: center;
+}
+
+main h1 {
+  font-weight: 600;
+}
+
+main p {
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 footer {
   background: #333;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
-  position: absolute;
+  padding: 20px 0;
+  // position: relative;
   width: 100%;
-  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+footer .copyright {
+  margin: 0px 0px;
+}
+
+footer .contact-info p {
+  margin: 5px 0;
+}
+
+footer .contact-info a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer .contact-info a:hover {
+  text-decoration: none;
 }
 
 .overlay {
