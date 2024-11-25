@@ -1,0 +1,34 @@
+<header>
+  <div class="banner">
+    <nav id="navbar">
+      <div class="nav-left">
+        <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Volia Tech Logo" class="logo">
+        <span class="company-name">Volia Tech.</span>
+      </div>
+
+      <!-- 
+      Toggle
+      -->
+      <div class="menu-toggle">☰</div>
+      <div class="overlay"></div>
+      <ul class="nav-right" id="nav-menu">
+        {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.link }}" {% if page.url==item.link %}class="current" {% endif %}>
+            {{ item.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- 
+    Subheader      
+    -->
+    <div class="subheader">
+      <h2>Simplify your marksix experience today!</h2>
+      <p>Boost your chances with smartly generated tickets based on past winning patterns.</p>
+    </div>
+
+  </div>
+</header>
